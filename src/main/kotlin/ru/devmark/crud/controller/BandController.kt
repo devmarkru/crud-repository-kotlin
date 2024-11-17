@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController
 import ru.devmark.crud.entity.Band
 import ru.devmark.crud.request.SaveBandRequest
 import ru.devmark.crud.response.StatusResponse
-import ru.devmark.crud.service.BandServiceImpl
+import ru.devmark.crud.service.BandService
 
 @RestController
 @RequestMapping("/bands")
 class BandController(
-    private val bandService: BandServiceImpl,
+    private val bandService: BandService,
 ) {
 
     @GetMapping

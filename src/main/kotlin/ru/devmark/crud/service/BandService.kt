@@ -9,7 +9,7 @@ import ru.devmark.crud.entity.Band
 import ru.devmark.crud.request.SaveBandRequest
 
 @Service
-class BandServiceImpl(private val bandRepository: BandRepository) {
+class BandService(private val bandRepository: BandRepository) {
 
     fun findAll(): List<Band> {
         log.info("Find all bands")
@@ -49,6 +49,6 @@ class BandServiceImpl(private val bandRepository: BandRepository) {
     }
 
     companion object {
-        private val log = LoggerFactory.getLogger(BandServiceImpl::class.java)
+        private val log = LoggerFactory.getLogger(BandService::class.java)
     }
 }
