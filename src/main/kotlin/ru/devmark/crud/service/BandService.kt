@@ -3,32 +3,33 @@ package ru.devmark.crud.service
 import org.slf4j.LoggerFactory
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
-import ru.devmark.crud.repository.BandRepository
-import ru.devmark.crud.exception.BandNotFoundException
 import ru.devmark.crud.entity.Band
+import ru.devmark.crud.exception.BandNotFoundException
+import ru.devmark.crud.repository.BandRepository
 import ru.devmark.crud.request.SaveBandRequest
 
 @Service
 class BandService(private val bandRepository: BandRepository) {
 
-    fun findAll(): List<Band> {
-        log.info("Find all bands")
+    fun getAll(): List<Band> {
+        log.info("Get all bands")
         return bandRepository.findByOrderByName()
     }
 
-    fun findById(id: Int): Band {
-        log.info("Find band with id=$id")
-        return bandRepository.findByIdOrNull(id) ?: throw BandNotFoundException(id)
+    fun getById(id: Int): Band {
+        log.info("Get band with id=$id")
+        return bandRepository.findByIdOrNull(id)
+            ?: throw BandNotFoundException(id)
     }
 
     fun create(request: SaveBandRequest) {
         log.info("Create new band with name=${request.name}")
         bandRepository.save(
-                Band(
-                        name = request.name!!,
-                        playersCount = request.playersCount,
-                        created = request.created!!
-                )
+            Band(
+                name = request.name!!,
+                playersCount = request.playersCount,
+                created = request.created!!
+            )
         )
     }
 

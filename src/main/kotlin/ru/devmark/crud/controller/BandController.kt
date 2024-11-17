@@ -21,11 +21,11 @@ class BandController(
 ) {
 
     @GetMapping
-    fun findAll() = bandService.findAll()
+    fun getAll() = bandService.getAll()
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable("id") id: Int): Band {
-        return bandService.findById(id)
+    fun getById(@PathVariable("id") id: Int): Band {
+        return bandService.getById(id)
     }
 
     @PostMapping
@@ -37,7 +37,7 @@ class BandController(
     @PutMapping("/{id}")
     fun update(
         @PathVariable("id") id: Int,
-        @Valid @RequestBody request: SaveBandRequest
+        @Valid @RequestBody request: SaveBandRequest,
     ): StatusResponse {
         bandService.update(id, request)
         return StatusResponse("Updated")
@@ -45,7 +45,7 @@ class BandController(
 
     @DeleteMapping("/{id}")
     fun delete(
-        @PathVariable("id") id: Int
+        @PathVariable("id") id: Int,
     ): StatusResponse {
         bandService.delete(id)
         return StatusResponse("Deleted")
