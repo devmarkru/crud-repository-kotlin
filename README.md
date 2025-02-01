@@ -1,4 +1,4 @@
-# crud-repository-kotlin
+# CrudRepository в Kotlin
 Пример rest-сервиса, работающего с БД с помощью **Spring Data** и **Kotlin**.
 
 Пример полностью готов к работе, т.к. использует **H2** - базу данных, работающую в оперативной памяти.
@@ -6,6 +6,7 @@
 
 Вы без труда сможете адаптировать этот пример для работы, например, с **PostgreSQL**. При этом не нужно править код. Достаточно изменить настройки подключения в файле `application.yml`, а также добавить в зависимости `build.gradle.kts` драйвер postgres.
 
-Данный проект является частью статьи [CrudRepository на Kotlin](https://devmark.ru/article/crud-repository-kotlin).
-
-Ещё больше статей по разработке ПО вы можете найти на моём сайте [devmark.ru](https://devmark.ru/).
+### Полезные ссылки
+* [CrudRepository на Kotlin](https://devmark.ru/article/crud-repository-kotlin).
+* [Новости проекта](https://t.me/+RjrPWNUEwf8wZTMy) и короткие заметки.
+* Ещё больше статей по разработке ПО вы можете найти на моём сайте [devmark.ru](https://devmark.ru/).
